@@ -1,5 +1,5 @@
 <?php
-include ("../include/common.php");
+    include ("../include/common.php");
 if (isteacher()==FALSE OR $_SESSION['isLogin']==FALSE){
     echo "<div class=\"alert alert-danger\" role=\"alert\"><h3>你没有权限访问该页面</h3></div>";
     echo "<a href=\"../index.php\"><button type=\"button\" class=\"btn btn-primary\">去首页</button></a>";
@@ -11,7 +11,7 @@ echo '
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="">'.$sitename.'教师面板</a>
+            <a class="navbar-brand" href="mean.php">'.$sitename.'教师面板</a>
         </div>
         <div>
             <ul class="nav navbar-nav">

@@ -1,5 +1,6 @@
 <?php
 include ("./header.php");
+include("search bar 2.php")
 ?>
 
 <div class="container" style="padding-top:70px;">
