@@ -16,7 +16,8 @@ echo '
         <div>
             <ul class="nav navbar-nav">
                 <li><a href="../index.php">网站首页</a></li>
-                <li><a href="mystu.php">我的学生</a></li>
+                <li><a href="findyear.php">年级查询</a></li>
+                <li><a href="findstu.php">搜索学生</a></li>
                 <li><a href="reglog.php">出勤记录</a></li>
             </ul>
         </div>

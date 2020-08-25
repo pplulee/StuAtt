@@ -17,8 +17,8 @@ echo '
             <ul class="nav navbar-nav">
                 <li><a href="../index.php">网站首页</a></li>
                 <li><a href="./index.php">后台首页</a></li>
-                <li><a href="./user.php">总用户管理</a></li>
-                <li><a href="./userstu.php">学生管理</a></li>
+                <li><a href="./user.php">总用户管理</a></li>         
+                <li><a href="./findstu.php">学生管理</a></li>
                 <li><a href="./reglog.php">考勤记录</a></li>
             </ul>
         </div>
