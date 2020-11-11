@@ -1,10 +1,10 @@
 <?php
-include ("./header.php");
+include ("header.php");
 ?>
 <div class="form-group">
     <label><h2>搜索用户</h2></label>
     <form action="user.php" method="get">
-        姓名：<input type="text" class="form-control" name="search" placeholder=请输入查询姓名>
+        用户名：<input type="text" class="form-control" name="search" placeholder=请输入查询姓名>
         <input type='submit' class='btn btn-primary btn-block' value='搜索'>
     </form>
 </div>
@@ -21,7 +21,7 @@ if (!(isset($_GET["search"]))){
     $search = $_GET["search"];
 }
 
-$result = mysqli_query($conn,"SELECT `userid`,`username`,`email`,`permission` FROM user WHERE `username` LIKE '".$search."%';");
+$result = mysqli_query($conn,"SELECT userid,username,email,permission FROM user WHERE username LIKE '".$search."%';");
 if (mysqli_num_rows($result)>0){
     while ($row = mysqli_fetch_assoc($result)){
         echo "<tr><th>".$row['userid']."</th><td>".$row['username']."</td><td>".$row['email']."</td><td>".$row['permission']."</td><td><a href=\"./edituser.php?action=edit&id=".$row['userid'].'" class="btn btn-xs btn-info">编辑</a></td>';

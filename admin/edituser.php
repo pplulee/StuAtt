@@ -40,6 +40,18 @@ function GetUserInfo($id){
         <input type='text' class='form-control' name='permission' value='".$result["permission"]."' required>
         </div>
     ";
+    echo "
+        <div class='form-group'>
+        <label>班级</label><br>
+        <input type='text' class='form-control' name='class' value='".$result["class"]."'>
+        </div>
+    ";
+    echo "
+        <div class='form-group'>
+        <label>年级</label><br>
+        <input type='text' class='form-control' name='year' value='".$result["year"]."'>
+        </div>
+    ";
     echo "<input type='submit' name='submit' class='btn btn-primary btn-block' value='确定修改'>";
     echo "</form>";
     if (isset($_POST["submit"])){
@@ -47,8 +59,11 @@ function GetUserInfo($id){
         if ($_POST["password"]!=""){
             mysqli_query($conn, 'UPDATE user SET password="'.$_POST["password"].'" WHERE userid="'.$id.'";');
         }
+        //Error will occur when UPDATE in one time, so update in separate
         mysqli_query($conn, 'UPDATE user SET email="'.$_POST["email"].'" WHERE userid="'.$id.'";');
         mysqli_query($conn, 'UPDATE user SET permission="'.$_POST["permission"].'" WHERE userid="'.$id.'";');
+        mysqli_query($conn, 'UPDATE user SET class="'.$_POST["class"].'" WHERE userid="'.$id.'";');
+        mysqli_query($conn, 'UPDATE user SET year="'.$_POST["year"].'" WHERE userid="'.$id.'";');
         echo "<div class='alert alert-success' role='alert'><p>修改成功，即将返回用户列表</p></div>";
         echo "<script>
                 setTimeout(\"javascript:location.href='user.php'\", 1000);

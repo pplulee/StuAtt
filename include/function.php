@@ -28,6 +28,7 @@ function isstu(){
     }
 }
 
+
 //Function for logout
 function logout(){
     unset($_SESSION['isLogin']);
@@ -37,6 +38,7 @@ function logout(){
     exit("<script language='javascript'>alert('你已成功注销');window.location.href='./index.php';</script>");
 }
 
+
 function getname($userid){
     global $conn;
     return mysqli_fetch_assoc(mysqli_query($conn, "SELECT username FROM user WHERE userid='".$userid."';"))['username'];
@@ -44,5 +46,10 @@ function getname($userid){
 
 function getclass($userid){
     global $conn;
-    return mysqli_fetch_assoc(mysqli_query($conn, "SELECT classnumber FROM classes WHERE stuid='".$userid."';"))['classnumber'];
+    return mysqli_fetch_assoc(mysqli_query($conn, "SELECT class FROM user WHERE userid='".$userid."';"))['class'];
+}
+
+function getyear($userid){
+    global $conn;
+    return mysqli_fetch_assoc(mysqli_query($conn, "SELECT year FROM user WHERE userid='".$userid."';"))['year'];
 }

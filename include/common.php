@@ -7,8 +7,10 @@ include ("function.php");
 
 
 //Enable error reporting
+///*
 ini_set("display_errors","On");
 error_reporting(E_ALL);
+//*/
 
 //Initialize session
 session_start();
